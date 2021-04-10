@@ -9,6 +9,7 @@ kyleear@csu.fullerton.edu
 
 
 How to execute program:
+
    Make sure express and ejs are installed
    
    Run the program by opening terminal in main program directory and typing following commancd in terminal
