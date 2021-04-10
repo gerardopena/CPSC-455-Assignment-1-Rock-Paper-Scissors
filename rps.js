@@ -29,6 +29,7 @@ function RPS(portNumber){
     });
 
     app.post("/play", function(req,resp) {
+
         currPlayer.playerChoice = req.body.playerchoice;
 
         let x = Math.floor((Math.random() * 3) + 1);
@@ -47,11 +48,11 @@ function RPS(portNumber){
             return;
         }
         
-        if(currPlayer.playerChoice === "rock" && serverPlayer.serverChoice === "rock" || currPlayer.playerChoice === "paper" && serverPlayer.serverChoice === "paper" || currPlayer.playerChoice === "scissors" && serverPlayer.serverChoice === "scissors") {
+        if(currPlayer.playerChoice === "rock" && serverPlayer.serverChoice === "rock" || currPlayer.playerChoice === "paper" && serverPlayer.serverChoice === "paper" || currPlayer.playerChoice === "scissors" && serverPlayer.serverChoice === "scissors") {           
             currPlayer.gameResult = "Tie";
             currPlayer.totalGames++;
         }
-        else if(currPlayer.playerChoice === "rock" && serverPlayer.serverChoice === "paper" || currPlayer.playerChoice === "paper" && serverPlayer.serverChoice === "scissors" || currPlayer.playerChoice === "scissors" && serverPlayer.serverChoice === "rock") {
+        else if(currPlayer.playerChoice === "rock" && serverPlayer.serverChoice === "paper" || currPlayer.playerChoice === "paper" && serverPlayer.serverChoice === "scissors" || currPlayer.playerChoice === "scissors" && serverPlayer.serverChoice === "rock") {            
             currPlayer.gameResult = "Server Wins";
             serverPlayer.wins++;
             currPlayer.totalGames++;
@@ -69,7 +70,6 @@ function RPS(portNumber){
         else {
             resp.render("results",{gameresult: currPlayer.gameResult, playerchoice: currPlayer.playerChoice, serverchoice: serverPlayer.serverChoice, playerwins: currPlayer.wins, serverwins: serverPlayer.wins, totalgames: currPlayer.totalGames})
         }
-
     });
 
     app.get('*', function(req, res) {
@@ -85,6 +85,7 @@ function RPS(portNumber){
     else {
         app.listen(portNumber);
     }
+    
 }
 
 let myGame = new RPS(3000);
