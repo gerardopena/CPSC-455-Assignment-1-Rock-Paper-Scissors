@@ -1,6 +1,6 @@
 # CPSC 455 Rock Paper Scissors
 
-Gerardo Pena Canchola
+# Gerardo Pena Canchola
 gerardopena23@csu.fullerton.edu
 
 Kyle Ear 
