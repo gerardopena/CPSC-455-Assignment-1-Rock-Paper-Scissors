@@ -15,8 +15,5 @@ How to execute program:
    Run the program by opening terminal in main program directory and typing following commancd in terminal
       node rps.js
 
-Extra Credit Implemented:
-    No
-
 Anything special about our submission that you should take note of:
     No
